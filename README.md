@@ -4,8 +4,8 @@
 Esta es una API REST segura para la gestión de tareas del hogar. La aplicación permite a los usuarios registrarse, iniciar sesión, y gestionar sus tareas de manera eficiente. Además, incluye una funcionalidad de administración para gestionar las tareas de todos los usuarios. 
 ---
 
-## Documentos y Campos
-El proyecto cuenta con los siguientes documentos principales:
+## Tablas y Campos
+El proyecto cuenta con las siguientes Tablas principales:
 
 ### 1. **Usuario**
 Representa a un usuario registrado en la aplicación.
@@ -34,8 +34,8 @@ Representa una tarea asignada a un usuario.
 
 ## Endpoints y Descripción
 ### 1. **Autenticación y Registro**
-- `POST /auth/register`: Registro de un nuevo usuario.
-- `POST /auth/login`: Inicio de sesión y obtención del token JWT.
+- `POST /usuarios/register`: Registro de un nuevo usuario.
+- `POST /usuarios/login`: Inicio de sesión y obtención del token JWT.
 
 ### 2. **Usuario con rol USER**
 - `GET /tareas`: Ver sus propias tareas.
@@ -44,10 +44,10 @@ Representa una tarea asignada a un usuario.
 - `DELETE /tareas/{id}`: Eliminar una tarea propia.
 
 ### 3. **Usuario con rol ADMIN**
-- `GET /admin/tareas`: Ver todas las tareas de todos los usuarios.
-- `POST /admin/tareas`: Crear una tarea para cualquier usuario.
-- `PUT /admin/tareas/{id}`: Marcar como hecha cualquier tarea.
-- `DELETE /admin/tareas/{id}`: Eliminar cualquier tarea de cualquier usuario.
+- `GET /tareas/admin`: Ver todas las tareas de todos los usuarios.
+- `POST /tareas/admin`: Crear una tarea para cualquier usuario.
+- `PUT /tareas/admin/{id}`: Marcar como hecha cualquier tarea.
+- `DELETE /tareas/admin/{id}`: Eliminar cualquier tarea de cualquier usuario.
 
 ---
 
