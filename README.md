@@ -16,7 +16,8 @@ Representa a un usuario registrado en la aplicación.
 - `email`: Correo electrónico (único).
 - `password`: Contraseña encriptada.
 - `rol`: Rol del usuario (`USER` o `ADMIN`).
-- `fecha_creacion`: Fecha de creación del usuario.
+- `fecha_crea`: Fecha de creación del usuario.
+- `direccion`: Direccion del Usuario
 
 ### 2. **Tarea**
 Representa una tarea asignada a un usuario.
