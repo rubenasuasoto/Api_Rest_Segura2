@@ -35,7 +35,7 @@ class UsuarioService : UserDetailsService {
         return User.builder()
             .username(usuario.username)
             .password(usuario.password)
-            .roles(usuario.roles.toString())
+            .roles(usuario.roles)
             .build()
     }
 
