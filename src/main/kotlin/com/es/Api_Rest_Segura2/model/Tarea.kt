@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 import java.util.Date
 
 
-@Document("Tarea")
+@Document("collTareas")
 data class Tarea(
     @BsonId
     val id: Long?,
