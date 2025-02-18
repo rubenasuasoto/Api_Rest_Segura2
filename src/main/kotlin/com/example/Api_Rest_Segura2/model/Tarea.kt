@@ -1,4 +1,33 @@
 ﻿package com.example.Api_Rest_Segura2.model
 
-class Tarea {
+
+
+
+import org.bson.codecs.pojo.annotations.BsonId
+import org.springframework.data.mongodb.core.mapping.Document
+
+import java.util.Date
+
+
+@Document("Tarea")
+data class Tarea(
+    @BsonId
+    val id: Long?,
+
+    val titulo: String,
+
+    val descripcion: String? = null,
+
+    var estado: EstadoTarea = EstadoTarea.PENDIENTE,
+
+    val usuario: Usuario,
+
+    val fechaCreacion: Date,
+
+    var fechaActualizacion: Date
+)
+
+enum class EstadoTarea {
+    PENDIENTE,
+    HECHA
 }

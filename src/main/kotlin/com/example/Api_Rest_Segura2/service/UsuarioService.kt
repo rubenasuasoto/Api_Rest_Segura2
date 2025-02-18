@@ -5,6 +5,7 @@ import com.example.Api_Rest_Segura2.dto.UsuarioDTO
 import com.example.Api_Rest_Segura2.dto.UsuarioRegisterDTO
 import com.example.Api_Rest_Segura2.error.exception.BadRequestException
 import com.example.Api_Rest_Segura2.error.exception.UnauthorizedException
+import com.example.Api_Rest_Segura2.model.Rol
 import com.example.Api_Rest_Segura2.model.Usuario
 import com.example.Api_Rest_Segura2.repository.UsuarioRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -56,7 +57,7 @@ class UsuarioService : UserDetailsService {
         if (usuarioInsertadoDTO.password != usuarioInsertadoDTO.passwordRepeat){
             throw BadRequestException("Las contraseñas no coinciden ")
         }
-        if (usuarioInsertadoDTO.rol !=null && usuarioInsertadoDTO.rol != "User"){
+        if (usuarioInsertadoDTO.rol !=null && usuarioInsertadoDTO.rol != Rol.USER){
             throw BadRequestException("Rol:"+usuarioInsertadoDTO.rol+"incorrecto")
         }
 
@@ -66,8 +67,8 @@ class UsuarioService : UserDetailsService {
             username = usuarioInsertadoDTO.username,
             email = usuarioInsertadoDTO.email,
             password = passwordEncoder.encode(usuarioInsertadoDTO.password),
-            roles = usuarioInsertadoDTO.rol ?: "",
-            fechaCrea = Date.from(Instant.now()),
+            roles = usuarioInsertadoDTO.rol,
+            fechacrea = Date.from(Instant.now()),
             direccion = usuarioInsertadoDTO.direccion
 
 

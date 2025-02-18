@@ -12,12 +12,15 @@ data class Usuario(
     val username: String,
     val password: String,
     val email: String,
-    val roles: String = "USER",
-    val fechaCrea: Date ,
+    val roles: Rol? = Rol.USER,
+    val fechacrea: Date ,
     val direccion: Direccion?
 
-) {
-
-
-
+)
+enum class Rol {
+    USER,
+    ADMIN
 }
+
+
+
