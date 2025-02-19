@@ -40,13 +40,14 @@ class UsuarioService : UserDetailsService {
     }
 
     fun insertUser(usuarioInsertadoDTO: UsuarioRegisterDTO) : UsuarioDTO? {
-
+        // comprobar que ningun campo esta vacio
         if (usuarioInsertadoDTO.username.isBlank() ||
             usuarioInsertadoDTO.email.isBlank() ||
             usuarioInsertadoDTO.password.isBlank() ||
             usuarioInsertadoDTO.passwordRepeat.isBlank()) {
             throw BadRequestException("uno o mas campos vacios")
         }
+        // comprobar que no existe el nombre del usuario
         if(usuarioRepository.findByUsername(usuarioInsertadoDTO.username).isPresent) {
             throw Exception("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
         }
