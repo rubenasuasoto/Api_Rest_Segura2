@@ -85,6 +85,10 @@ Representa una tarea asignada a un usuario.
 
 ## PRUEBAS GESTIÓN USUARIOS
 
+
 A continuación, se presentan las pruebas realizadas en **Insomnia** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
 
-### **1. Prueba de Registro de Usuario**
+### **1. Prueba de Registro de Usuario "USER"**
+![Prueba de Registro](img/register.png)
+-
+![Prueba de Registro](img/mongodb_register.png)
