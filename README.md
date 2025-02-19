@@ -100,6 +100,8 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 ![Prueba de Registro](img/mongoRegistro.png)
 
 ### **3. Prueba de Login de Usuario **
-![Prueba de Login](img/registro.png)
+![Prueba de Login](img/Login.png)
+
+### **4. Prueba de Registro de Usuario Errores**
 
 
