@@ -1,4 +1,4 @@
-﻿﻿# Gestión de Tareas del Hogar - API REST Segura
+﻿# Gestión de Tareas del Hogar - API REST Segura
 
 ## Descripción del Proyecto
 Esta es una API REST segura para la gestión de tareas del hogar. La aplicación permite a los usuarios registrarse, iniciar sesión, y gestionar sus tareas de manera eficiente. Además, incluye una funcionalidad de administración para gestionar las tareas de todos los usuarios.
@@ -82,3 +82,9 @@ Representa una tarea asignada a un usuario.
     - Los usuarios con rol `USER` solo pueden gestionar sus propias tareas.
 - **Validación de entradas** para prevenir inyecciones de código y otros ataques.
 - **Control de acceso** para proteger los endpoints sensibles.
+
+## PRUEBAS GESTIÓN USUARIOS
+
+A continuación, se presentan las pruebas realizadas en **Insomnia** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
+
+### **1. Prueba de Registro de Usuario**
