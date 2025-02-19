@@ -89,6 +89,17 @@ Representa una tarea asignada a un usuario.
 A continuación, se presentan las pruebas realizadas en **Insomnia** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
 
 ### **1. Prueba de Registro de Usuario "USER"**
+
 ![Prueba de Registro](img/register.png)
 -
 ![Prueba de Registro](img/mongodb_register.png)
+
+### **2. Prueba de Registro de Usuario "ADMIN"**
+![Prueba de Registro](img/registro.png)
+-
+![Prueba de Registro](img/mongoRegistro.png)
+
+### **3. Prueba de Login de Usuario **
+![Prueba de Login](img/registro.png)
+
+
