@@ -102,7 +102,7 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 ### **3. Prueba de Login de Usuario **
 ![Prueba de Login](img/Login.png)
 
-### **4. Prueba de Registro de Usuario Errores**
+### **4. Prueba de Registro de Usuario "Errores**
 #### Campo vacio
 ![Prueba de Registro](img/campo_vacio.png)
 -
@@ -117,3 +117,6 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 -
 #### Rol incorrecto
 ![Prueba de Registro](img/Rol_incorrecto.png)
+### **5. Prueba de Login de Usuario "Errores"**
+#### Nombre o contraseña incorrecto
+![Prueba de Registro](img/Login_incorrecto.png)
