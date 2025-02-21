@@ -126,4 +126,4 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 
 A continuación, se presentan las pruebas realizadas en la **Interfaz** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
 
-
+![Prueba de Registro](img/interfaz_Api.webm)
