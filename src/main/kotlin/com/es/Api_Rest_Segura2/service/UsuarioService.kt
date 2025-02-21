@@ -49,7 +49,7 @@ class UsuarioService : UserDetailsService {
         }
         // comprobar que no existe el nombre del usuario
         if(usuarioRepository.findByUsername(usuarioInsertadoDTO.username).isPresent) {
-            throw Exception("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
+            throw BadRequestException("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
         }
 
         // comprobar que ambas passwords sean iguales
@@ -63,7 +63,7 @@ class UsuarioService : UserDetailsService {
         }
         //Comprobar el email
         if(usuarioRepository.findByEmail(usuarioInsertadoDTO.email).isPresent) {
-            throw Exception("El email ${usuarioInsertadoDTO.email} ya está registrado")
+            throw BadRequestException("El email ${usuarioInsertadoDTO.email} ya está registrado")
         }
 
         val usuario = Usuario(
