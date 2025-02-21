@@ -4,6 +4,7 @@ package com.es.Api_Rest_Segura2.service
 import com.es.Api_Rest_Segura2.dto.UsuarioDTO
 import com.es.Api_Rest_Segura2.dto.UsuarioRegisterDTO
 import com.es.Api_Rest_Segura2.error.exception.BadRequestException
+import com.es.Api_Rest_Segura2.error.exception.ConflictException
 import com.es.Api_Rest_Segura2.error.exception.UnauthorizedException
 import com.es.Api_Rest_Segura2.model.Usuario
 import com.es.Api_Rest_Segura2.repository.UsuarioRepository
@@ -49,7 +50,7 @@ class UsuarioService : UserDetailsService {
         }
         // comprobar que no existe el nombre del usuario
         if(usuarioRepository.findByUsername(usuarioInsertadoDTO.username).isPresent) {
-            throw BadRequestException("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
+            throw ConflictException("Usuario ${usuarioInsertadoDTO.username} ya está registrado")
         }
 
         // comprobar que ambas passwords sean iguales
@@ -63,7 +64,7 @@ class UsuarioService : UserDetailsService {
         }
         //Comprobar el email
         if(usuarioRepository.findByEmail(usuarioInsertadoDTO.email).isPresent) {
-            throw BadRequestException("El email ${usuarioInsertadoDTO.email} ya está registrado")
+            throw ConflictException("El email ${usuarioInsertadoDTO.email} ya está registrado")
         }
 
         val usuario = Usuario(
