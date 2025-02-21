@@ -120,3 +120,10 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 ### **5. Prueba de Login de Usuario "Errores"**
 #### Nombre o contraseña incorrecto
 ![Prueba de Registro](img/Login_incorrecto.png)
+
+## PRUEBAS GESTIÓN USUARIOS Interfaz
+
+
+A continuación, se presentan las pruebas realizadas en la **Interfaz** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
+
+
