@@ -121,9 +121,17 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 #### Nombre o contraseña incorrecto
 ![Prueba de Registro](img/Login_incorrecto.png)
 
-## PRUEBAS GESTIÓN USUARIOS Interfaz
+
+
+## PRUEBAS GESTIÓN USUARIOS INTERFAZ
 
 
 A continuación, se presentan las pruebas realizadas en la **Interfaz** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
 
 ![Prueba de Registro](img/interfaz_Api.webm)
+
+Pd: el video se deberia descargar si haces click o en el sitio dandole "view Raw"
+
+Operaciones que aparecen en el video de la interfaz 
+
+![Prueba de Registro](img/mongodb_prueba.png)
