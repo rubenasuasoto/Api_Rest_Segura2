@@ -12,22 +12,19 @@ import java.util.Date
 @Document("collTareas")
 data class Tarea(
     @BsonId
-    val id: Long?,
+    val id: String?,
 
-    val titulo: String,
+    var titulo: String,
 
-    val descripcion: String? = null,
+    var descripcion: String? = null,
 
-    var estado: EstadoTarea = EstadoTarea.PENDIENTE,
+    var estado: String ="PENDIENTE",
 
-    val usuario: Usuario,
+    var usuario: String,
 
     val fechaCreacion: Date,
 
     var fechaActualizacion: Date
 )
 
-enum class EstadoTarea {
-    PENDIENTE,
-    HECHA
-}
+

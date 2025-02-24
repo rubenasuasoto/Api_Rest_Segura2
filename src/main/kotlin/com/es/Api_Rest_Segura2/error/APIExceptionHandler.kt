@@ -3,6 +3,7 @@ package com.es.Api_Rest_Segura2.error
 
 import com.es.Api_Rest_Segura2.error.exception.BadRequestException
 import com.es.Api_Rest_Segura2.error.exception.ConflictException
+import com.es.Api_Rest_Segura2.error.exception.NotFoundException
 import com.es.Api_Rest_Segura2.error.exception.UnauthorizedException
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.http.HttpStatus
@@ -44,6 +45,12 @@ class APIExceptionHandler {
     @ResponseStatus(HttpStatus.CONFLICT)
     @ResponseBody
     fun handleConflict(request: HttpServletRequest, e: Exception) : ErrorRespuesta {
+        return ErrorRespuesta(e.message!!, request.requestURI)
+    }
+    @ExceptionHandler(NotFoundException::class) // Las "clases" (excepciones) que se quieren controlar
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseBody
+    fun handleNotFound(request: HttpServletRequest, e: Exception) : ErrorRespuesta {
         return ErrorRespuesta(e.message!!, request.requestURI)
     }
 }
