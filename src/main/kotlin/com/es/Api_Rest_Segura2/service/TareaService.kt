@@ -5,9 +5,10 @@ import com.es.Api_Rest_Segura2.model.Tarea
 import com.es.Api_Rest_Segura2.repository.TareaRepository
 import com.es.Api_Rest_Segura2.repository.UsuarioRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 import java.time.Instant
 import java.util.*
-
+@Service
 class TareaService {
     @Autowired
     private lateinit var tareaRepository: TareaRepository
