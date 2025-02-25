@@ -20,7 +20,7 @@ data class Tarea(
 
     var estado: String ="PENDIENTE",
 
-    var usuario: String,
+    var usuario: String?,
 
     val fechaCreacion: Date,
 

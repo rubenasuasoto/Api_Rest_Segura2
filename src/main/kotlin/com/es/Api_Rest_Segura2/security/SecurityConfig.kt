@@ -9,6 +9,7 @@ import com.nimbusds.jose.proc.SecurityContext
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.HttpMethod
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.config.Customizer
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration
@@ -26,58 +27,50 @@ import org.springframework.security.web.SecurityFilterChain
 @Configuration
 @EnableWebSecurity
 class SecurityConfig {
-
     @Autowired
     private lateinit var rsaKeys: RSAKeysProperties
-
     @Bean
-    fun securityFilterChain(http: HttpSecurity) : SecurityFilterChain {
+    fun securityFilterChain(http: HttpSecurity):SecurityFilterChain {
 
         return http
-            .csrf { csrf -> csrf.disable() } // Cross-Site Forgery
-            .authorizeHttpRequests { auth -> auth
-                .anyRequest().permitAll()
-            } // Los recursos protegidos y publicos
+            .csrf{csrf -> csrf.disable()}
+            .authorizeHttpRequests{auth ->auth
+                // Endpoints Publicos
+                .requestMatchers(HttpMethod.POST,"/usuarios/login").permitAll()
+                .requestMatchers(HttpMethod.POST,"/usuarios/register").permitAll()
+                // Endpoints tareas
+                .requestMatchers(HttpMethod.POST,"/tareas/self").authenticated()
+                .requestMatchers(HttpMethod.GET,"/tareas/self").authenticated()
+
+                .requestMatchers(HttpMethod.PUT,"/tareas{id}").authenticated()
+                .requestMatchers(HttpMethod.DELETE,"/tareas/{id}").authenticated()
+
+                .requestMatchers(HttpMethod.GET,"/tareas").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST,"/tareas").hasRole("ADMIN")
+
+                .anyRequest().authenticated()}
+            //Los recursos protegidos y publicos
             .oauth2ResourceServer { oauth2 -> oauth2.jwt(Customizer.withDefaults()) }
             .sessionManagement { session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .httpBasic(Customizer.withDefaults())
             .build()
-
     }
-
     @Bean
-    fun passwordEncoder() : PasswordEncoder {
+    fun passwordEncoder() : PasswordEncoder{
         return BCryptPasswordEncoder()
     }
-
-    /**
-     * Método que inicializa un objeto de tipo AuthenticationManager
-     */
     @Bean
-    fun authenticationManager(authenticationConfiguration: AuthenticationConfiguration) : AuthenticationManager {
+    fun authenticationManager(authenticationConfiguration: AuthenticationConfiguration  ): AuthenticationManager {
         return authenticationConfiguration.authenticationManager
     }
-
-
-    /*
-    MÉTODO PARA CODIFICAR UN JWT
-     */
     @Bean
-    fun jwtEncoder(): JwtEncoder {
+    fun jwtEncoder():JwtEncoder{
         val jwk: JWK = RSAKey.Builder(rsaKeys.publicKey).privateKey(rsaKeys.privateKey).build()
-        val jwks: JWKSource<SecurityContext> = ImmutableJWKSet(JWKSet(jwk))
+        val jwks : JWKSource<SecurityContext> = ImmutableJWKSet(JWKSet(jwk))
         return NimbusJwtEncoder(jwks)
     }
-
-    /*
-    MÉTODO PARA DECODIFICAR UN JWT
-     */
     @Bean
-    fun jwtDecoder(): JwtDecoder {
-        return NimbusJwtDecoder.withPublicKey(rsaKeys.publicKey).build()
+    fun jwtDecoder():JwtDecoder {
+        return  NimbusJwtDecoder.withPublicKey(rsaKeys.publicKey).build()
     }
-
-
-
-
 }

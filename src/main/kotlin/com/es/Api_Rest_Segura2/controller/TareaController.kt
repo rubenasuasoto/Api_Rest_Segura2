@@ -3,6 +3,7 @@
 import com.es.Api_Rest_Segura2.model.Tarea
 import com.es.Api_Rest_Segura2.service.TareaService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.security.authentication.AuthenticationManager
@@ -19,13 +20,21 @@ class TareaController {
     @Autowired
     private lateinit var tareaService: TareaService
 
-
+    @PostMapping("/self")
+    fun altaSelf(
+        @RequestBody tareas: Tarea
+    ): ResponseEntity<Tarea> {
+        val currentUsername = SecurityContextHolder.getContext().authentication.name
+        val newTarea = tareaService.insertTareaSelf(tareas, currentUsername)
+        return ResponseEntity(newTarea, HttpStatus.CREATED)
+    }
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     fun registrartarea(@RequestBody tarea: Tarea): ResponseEntity<Tarea> {
         val nuevoTarea = tareaService.insertTarea(tarea)
         return ResponseEntity.status(201).body(nuevoTarea)
     }
-    @GetMapping("")
+    @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     fun getAllTareas(): ResponseEntity<List<Tarea>> {
         val tareas = tareaService.findAllTareas()
@@ -45,11 +54,11 @@ class TareaController {
      */
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') || @tareaService.isUserOwner(#id, authentication.name)")
-    fun updateTarea(
+    fun updateEstado(
         @RequestBody tarea: Tarea,
         @PathVariable id: String
     ): ResponseEntity<Tarea> {
-        val updatedTarea = tareaService.updateTarea(id, tarea)
+        val updatedTarea = tareaService.updateEstado(id, tarea)
         return ResponseEntity.ok(updatedTarea)
     }
 

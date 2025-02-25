@@ -14,7 +14,7 @@ class TareaService {
     private lateinit var usuarioRepository: UsuarioRepository
 
 
-    fun insertTarea(tareas: Tarea): Tarea {
+    fun insertTarea(tareas: Tarea,): Tarea {
         // comprobar que ningun campo esta vacio
 
 
@@ -24,6 +24,26 @@ class TareaService {
             descripcion = tareas.descripcion,
             estado = tareas.estado,
             usuario = tareas.usuario ,
+            fechaActualizacion =Date.from(Instant.now()) ,
+            fechaCreacion =Date.from(Instant.now())
+
+
+
+        )
+        return tareaRepository.insert(tarea)
+
+
+    }
+    fun insertTareaSelf(tareas: Tarea,username: String): Tarea {
+        // comprobar que ningun campo esta vacio
+
+
+        val tarea = Tarea(
+            null,
+            titulo = tareas.titulo,
+            descripcion = tareas.descripcion,
+            estado = tareas.estado,
+            usuario = username ,
             fechaActualizacion =Date.from(Instant.now()) ,
             fechaCreacion =Date.from(Instant.now())
 
@@ -45,16 +65,14 @@ class TareaService {
         }
         return tareaRepository.findTareasByUsername(username)
     }
-    fun updateTarea(id: String, tareaActualizada: Tarea): Tarea {
+    fun updateEstado(id: String, tareaActualizada: Tarea): Tarea {
 
 
         val tarea = tareaRepository.findById(id)
             .orElseThrow { NotFoundException("Tarea con id $id no encontrada") }
 
-        tarea.titulo= tareaActualizada.titulo
+
         tarea.estado= tareaActualizada.estado
-        tarea.descripcion = tareaActualizada.descripcion
-        tarea.usuario = tareaActualizada.usuario
         tarea.fechaActualizacion = Date.from(Instant.now())
 
 
