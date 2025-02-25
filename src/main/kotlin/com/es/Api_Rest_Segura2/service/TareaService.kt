@@ -12,6 +12,7 @@ import java.util.*
 class TareaService {
     @Autowired
     private lateinit var tareaRepository: TareaRepository
+    @Autowired
     private lateinit var usuarioRepository: UsuarioRepository
 
 
