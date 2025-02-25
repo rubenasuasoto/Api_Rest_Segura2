@@ -27,7 +27,7 @@ Representa una tarea asignada a un usuario.
 - `titulo`: Título de la tarea.
 - `descripcion`: Descripción detallada de la tarea.
 - `estado`: Estado de la tarea (`pendiente` o `hecha`).
-- `usuario_id`: Identificador del usuario al que se le asignó la tarea.
+- `usuario`: username(unico) del usuario al que se le asignó la tarea.
 - `fecha_creacion`: Fecha de creación de la tarea.
 - `fecha_actualizacion`: Fecha de la última actualización de la tarea.
 
@@ -70,6 +70,7 @@ Representa una tarea asignada a un usuario.
 - `401 Unauthorized`: Intento de acceso sin autenticación.
 - `403 Forbidden`: Intento de acceso a recursos no autorizados.
 - `404 Not Found`: Recurso no encontrado (usuario o tarea inexistente).
+- `409 Conflict`: El recurso ya existe no se puede volver a crear .
 - `500 Internal Server Error`: Error interno en el servidor.
 
 ---
