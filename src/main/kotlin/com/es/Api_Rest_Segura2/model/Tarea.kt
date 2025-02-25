@@ -14,7 +14,7 @@ data class Tarea(
     @BsonId
     val id: String?,
 
-    var titulo: String,
+    var titulo: String?,
 
     var descripcion: String? = null,
 
@@ -22,9 +22,9 @@ data class Tarea(
 
     var usuario: String?,
 
-    val fechaCreacion: Date,
+    val fechaCreacion: Date?,
 
-    var fechaActualizacion: Date
+    var fechaActualizacion: Date?
 )
 
 
