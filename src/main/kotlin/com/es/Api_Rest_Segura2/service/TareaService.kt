@@ -64,7 +64,7 @@ class TareaService {
         if (!usuarioRepository.existsByUsername(username)) {
             throw NotFoundException("Usuario con id $username no encontrado")
         }
-        return tareaRepository.findTareasByUsername(username)
+        return tareaRepository.findTareasByUsuario(username)
     }
     fun updateEstado(id: String, tareaActualizada: Tarea): Tarea {
 
@@ -88,8 +88,8 @@ class TareaService {
         }
         tareaRepository.deleteById(id)
     }
-    fun isUserOwner(tareaId:String, username: String): Boolean{
-        return tareaRepository.findTareasBy_id(tareaId).first().usuario == username
+    fun isUserOwner(tareaId:String, usuario: String): Boolean{
+        return tareaRepository.findTareasBy_id(tareaId).first().usuario == usuario
     }
 }
 

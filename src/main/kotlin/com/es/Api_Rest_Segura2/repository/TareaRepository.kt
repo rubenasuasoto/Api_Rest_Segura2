@@ -9,6 +9,6 @@ import java.util.*
 @Repository
 interface TareaRepository : MongoRepository<Tarea, String> {
 
-    fun findTareasByUsername(usuario: String): List<Tarea>
+    fun findTareasByUsuario(usuario: String): List<Tarea>
     fun findTareasBy_id(id: String?): List<Tarea>
 }
