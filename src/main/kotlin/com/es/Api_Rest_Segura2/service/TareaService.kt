@@ -6,6 +6,7 @@ import com.es.Api_Rest_Segura2.error.exception.NotFoundException
 import com.es.Api_Rest_Segura2.model.Tarea
 import com.es.Api_Rest_Segura2.repository.TareaRepository
 import com.es.Api_Rest_Segura2.repository.UsuarioRepository
+import org.bson.types.ObjectId
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.time.Instant
@@ -28,7 +29,7 @@ class TareaService {
         }
         // comprobar que no existe el nombre del usuario
         if(!usuarioRepository.findByUsername(tareas.usuario!!).isPresent) {
-            throw ConflictException("Usuario ${tareas.usuario} no existe ")
+            throw NotFoundException("Usuario ${tareas.usuario} no existe ")
         }
         // Comprobar el estado
         if(tareas.estado != null && tareas.estado != "PENDIENTE" && tareas.estado != "HECHA" ) {
@@ -113,7 +114,7 @@ class TareaService {
         }
         tareaRepository.deleteById(id)
     }
-    fun isUserOwner(tareaId:String, usuario: String): Boolean{
+    fun isUserOwner(tareaId:ObjectId, usuario: String): Boolean{
         return tareaRepository.findTareasById(tareaId).first().usuario == usuario
     }
 }
