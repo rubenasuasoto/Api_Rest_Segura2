@@ -1,5 +1,7 @@
 ﻿package com.es.Api_Rest_Segura2.service
 
+import com.es.Api_Rest_Segura2.error.exception.BadRequestException
+import com.es.Api_Rest_Segura2.error.exception.ConflictException
 import com.es.Api_Rest_Segura2.error.exception.NotFoundException
 import com.es.Api_Rest_Segura2.model.Tarea
 import com.es.Api_Rest_Segura2.repository.TareaRepository
@@ -18,7 +20,20 @@ class TareaService {
 
     fun insertTarea(tareas: Tarea,): Tarea {
         // comprobar que ningun campo esta vacio
-
+        if (tareas.titulo!!.isBlank()||
+            tareas.descripcion!!.isBlank() ||
+            tareas.estado.isBlank() ||
+            tareas.usuario!!.isBlank()) {
+            throw BadRequestException("uno o mas campos vacios")
+        }
+        // comprobar que no existe el nombre del usuario
+        if(!usuarioRepository.findByUsername(tareas.usuario!!).isPresent) {
+            throw ConflictException("Usuario ${tareas.usuario} no existe ")
+        }
+        // Comprobar el estado
+        if(tareas.estado != null && tareas.estado != "PENDIENTE" && tareas.estado != "HECHA" ) {
+            throw BadRequestException("Estado: ${tareas.estado} incorrecto")
+        }
 
         val tarea = Tarea(
             null,
@@ -37,8 +52,13 @@ class TareaService {
 
     }
     fun insertTareaSelf(tareas: Tarea,username: String): Tarea {
-        // comprobar que ningun campo esta vacio
 
+        // comprobar que ningun campo esta vacio
+        if (tareas.titulo!!.isBlank()||
+            tareas.descripcion!!.isBlank() ||
+            tareas.estado.isBlank() ) {
+            throw BadRequestException("uno o mas campos vacios")
+        }
 
         val tarea = Tarea(
             null,
@@ -69,6 +89,10 @@ class TareaService {
     }
     fun updateEstado(id: String, tareaActualizada: Tarea): Tarea {
 
+        // Comprobar el estado
+        if(tareaActualizada.estado != null && tareaActualizada.estado != "PENDIENTE" && tareaActualizada.estado != "HECHA" ) {
+            throw BadRequestException("Estado: ${tareaActualizada.estado} incorrecto")
+        }
 
         val tarea = tareaRepository.findById(id)
             .orElseThrow { NotFoundException("Tarea con id $id no encontrada") }
