@@ -54,7 +54,7 @@ class TareaController {
      * Endpoint para actualizar una tarea por ID
      */
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or @tareaService.isUserOwner(#id, authentication.name)")
+    @PreAuthorize("hasRole('ADMIN')")
     fun updateEstado(
         @RequestBody tarea: Tarea,
         @PathVariable id: String
@@ -62,16 +62,33 @@ class TareaController {
         val updatedTarea = tareaService.updateEstado(id, tarea)
         return ResponseEntity.ok(updatedTarea)
     }
+    @PutMapping("/self/{id}")
+    fun updateEstadoSelf(
+        @RequestBody tarea: Tarea,
+        @PathVariable id: String
+    ): ResponseEntity<Tarea> {
+        val currentUsername = SecurityContextHolder.getContext().authentication.name
+        val updatedTarea = tareaService.updateEstadoSelf(id, tarea,currentUsername)
+        return ResponseEntity.ok(updatedTarea)
+    }
 
     /**
      * Endpoint para eliminar una tarea por ID
      */
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or @tareaService.isUserOwner(#id, authentication.name)")
+    @PreAuthorize("hasRole('ADMIN')")
     fun deleteTarea(
         @PathVariable id: String
     ): ResponseEntity<Void> {
         tareaService.deleteTarea(id)
+        return ResponseEntity.noContent().build()
+    }
+    @DeleteMapping("/self/{id}")
+    fun deleteTareaSelf(
+        @PathVariable id: String
+    ): ResponseEntity<Void> {
+        val currentUsername = SecurityContextHolder.getContext().authentication.name
+        tareaService.deleteTareaSelf(id,currentUsername)
         return ResponseEntity.noContent().build()
     }
 
