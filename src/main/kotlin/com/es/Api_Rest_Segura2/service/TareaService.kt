@@ -27,7 +27,7 @@ class TareaService {
             tareas.usuario!!.isBlank()) {
             throw BadRequestException("uno o mas campos vacios")
         }
-        // comprobar que no existe el nombre del usuario
+        // comprobar que  existe el nombre del usuario
         if(!usuarioRepository.findByUsername(tareas.usuario!!).isPresent) {
             throw NotFoundException("Usuario ${tareas.usuario} no existe ")
         }
