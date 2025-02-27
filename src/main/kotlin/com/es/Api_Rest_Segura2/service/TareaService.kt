@@ -110,7 +110,7 @@ class TareaService {
         }
         tareaRepository.deleteById(id)
     }
-    fun isUserOwner(tareaId:ObjectId, usuario: String): Boolean{
+    fun isUserOwner(tareaId:String, usuario: String): Boolean{
         return tareaRepository.findTareasById(tareaId).first().usuario == usuario
     }
 }

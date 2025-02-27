@@ -13,7 +13,7 @@ import java.util.Date
 @Document("collTareas")
 data class Tarea(
     @BsonId
-    val id: ObjectId?,
+    val id: String?,
 
     var titulo: String?,
 
