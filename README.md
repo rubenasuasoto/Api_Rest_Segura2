@@ -154,8 +154,22 @@ Sino eres admin
 
 ![Prueba de Registro](img/Tarea/dar_tarea_unathorized.png)
 
+### **3. Prueba de ver tus tareas "USER"**
 
-### **3. Prueba de actualizar estado "USER"**
+![Prueba de Registro](img/Tarea/get_self_tarea.png)
+
+
+### **4. Prueba ver tareas  "ADMIN"**
+
+![Prueba de Registro](img/Tarea/tareas.png)
+
+Sino eres admin 
+
+![Prueba de Registro](img/Tarea/get_forbbiden.png)
+
+
+
+### **5. Prueba de actualizar estado "USER"**
 
 ![Prueba de Registro](img/Tarea/cambiar_estado.png)
 
@@ -163,7 +177,7 @@ Sino te pertenece la tarea
 
 ![Prueba de Registro](img/Tarea/update_forbidden.png)
 
-### **4. Prueba de actualizar estado  "ADMIN"**
+### **6. Prueba de actualizar estado  "ADMIN"**
 
 ![Prueba de Registro](img/Tarea/actualizar_tarea.png)
 
