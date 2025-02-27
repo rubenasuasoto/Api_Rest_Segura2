@@ -1,5 +1,6 @@
 ﻿package com.es.Api_Rest_Segura2.controller
 
+import com.es.Api_Rest_Segura2.dto.TareaDTO
 import com.es.Api_Rest_Segura2.model.Tarea
 import com.es.Api_Rest_Segura2.service.TareaService
 import org.springframework.beans.factory.annotation.Autowired
@@ -22,7 +23,7 @@ class TareaController {
 
     @PostMapping("/self")
     fun altaSelf(
-        @RequestBody tareas: Tarea
+        @RequestBody tareas: TareaDTO
     ): ResponseEntity<Tarea> {
         val currentUsername = SecurityContextHolder.getContext().authentication.name
         val newTarea = tareaService.insertTareaSelf(tareas, currentUsername)

@@ -1,7 +1,7 @@
 ﻿package com.es.Api_Rest_Segura2.service
 
+import com.es.Api_Rest_Segura2.dto.TareaDTO
 import com.es.Api_Rest_Segura2.error.exception.BadRequestException
-import com.es.Api_Rest_Segura2.error.exception.ConflictException
 import com.es.Api_Rest_Segura2.error.exception.NotFoundException
 import com.es.Api_Rest_Segura2.model.Tarea
 import com.es.Api_Rest_Segura2.repository.TareaRepository
@@ -19,11 +19,10 @@ class TareaService {
     private lateinit var usuarioRepository: UsuarioRepository
 
 
-    fun insertTarea(tareas: Tarea,): Tarea {
+    fun insertTarea(tareas: Tarea): Tarea {
         // comprobar que ningun campo esta vacio
         if (tareas.titulo!!.isBlank()||
             tareas.descripcion!!.isBlank() ||
-            tareas.estado.isBlank() ||
             tareas.usuario!!.isBlank()) {
             throw BadRequestException("uno o mas campos vacios")
         }
@@ -31,16 +30,13 @@ class TareaService {
         if(!usuarioRepository.findByUsername(tareas.usuario!!).isPresent) {
             throw NotFoundException("Usuario ${tareas.usuario} no existe ")
         }
-        // Comprobar el estado
-        if(tareas.estado != null && tareas.estado != "PENDIENTE" && tareas.estado != "HECHA" ) {
-            throw BadRequestException("Estado: ${tareas.estado} incorrecto")
-        }
+
 
         val tarea = Tarea(
             null,
             titulo = tareas.titulo,
             descripcion = tareas.descripcion,
-            estado = tareas.estado,
+            estado = "PENDIENTE",
             usuario = tareas.usuario ,
             fechaActualizacion =Date.from(Instant.now()) ,
             fechaCreacion =Date.from(Instant.now())
@@ -52,12 +48,12 @@ class TareaService {
 
 
     }
-    fun insertTareaSelf(tareas: Tarea,username: String): Tarea {
+    fun insertTareaSelf(tareas: TareaDTO, username: String): Tarea {
 
         // comprobar que ningun campo esta vacio
-        if (tareas.titulo!!.isBlank()||
-            tareas.descripcion!!.isBlank() ||
-            tareas.estado.isBlank() ) {
+        if (tareas.titulo.isBlank()||
+            tareas.descripcion.isBlank()
+                ) {
             throw BadRequestException("uno o mas campos vacios")
         }
 
@@ -65,7 +61,7 @@ class TareaService {
             null,
             titulo = tareas.titulo,
             descripcion = tareas.descripcion,
-            estado = tareas.estado,
+            estado = "PENDIENTE",
             usuario = username ,
             fechaActualizacion =Date.from(Instant.now()) ,
             fechaCreacion =Date.from(Instant.now())
