@@ -142,12 +142,15 @@ Operaciones que aparecen en el video de la interfaz
 
 A continuación, se presentan las pruebas realizadas en **Insomnia** para comprobar el correcto funcionamiento de las tareas
 
-### **1. Prueba de Registro de Tarea "USER"**
+### **1. Prueba de Registro de "Tarea propia" "USER"**
 
 ![Prueba de Registro](img/Tarea/self_tarea.png)
 
-### **2. Prueba de Registro de Tarea "ADMIN"**
+### **2. Prueba de Registro de "dar  Tarea" "ADMIN"**
+
+![Prueba de Registro](img/Tarea/dar_tarea.png)
 
 
+### **3. Prueba de actualizar estado "USER"**
 
 
