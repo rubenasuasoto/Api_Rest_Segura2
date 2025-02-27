@@ -136,3 +136,10 @@ Pd: el video se deberia descargar si haces click o en el sitio dandole "view Raw
 Operaciones que aparecen en el video de la interfaz 
 
 ![Prueba de Registro](img/mongodb_prueba.png)
+
+
+## PRUEBAS GESTIÓN TAREAS
+
+### **1. Prueba de Registro de Tarea "USER"**
+
+
