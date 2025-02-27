@@ -169,7 +169,7 @@ Sino eres admin
 
 
 
-### **5. Prueba de actualizar estado "USER"**
+### **5. Prueba de actualizar tu estado "USER"**
 
 ![Prueba de Registro](img/Tarea/cambiar_estado.png)
 
@@ -184,5 +184,23 @@ Sino te pertenece la tarea
 Sino eres admin 
 
 ![Prueba de Registro](img/Tarea/actualizar_forbi.png)
+
+
+### **7. Prueba de eliminar tu tarea "USER"**
+
+![Prueba de Registro](img/Tarea/delete_self_tarea.png)
+Sino te pertenece la tarea 
+
+![Prueba de Registro](img/Tarea/delete_unauthorized.png)
+
+
+
+### **8. Prueba eliminar tareas  "ADMIN"**
+
+![Prueba de Registro](img/Tarea/delete_other.png)
+
+Sino eres admin 
+
+![Prueba de Registro](img/Tarea/delete_forbi.png)
 
 
