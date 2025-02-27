@@ -41,10 +41,11 @@ class SecurityConfig {
                 // Endpoints tareas
                 .requestMatchers(HttpMethod.POST,"/tareas/self").authenticated()
                 .requestMatchers(HttpMethod.GET,"/tareas/self").authenticated()
+                .requestMatchers(HttpMethod.DELETE,"/tareas/self/{id}").authenticated()
+                .requestMatchers(HttpMethod.PUT,"/tareas/self/{id}").authenticated()
 
-                .requestMatchers(HttpMethod.PUT,"/tareas{id}").authenticated()
-                .requestMatchers(HttpMethod.DELETE,"/tareas/{id}").authenticated()
-
+                .requestMatchers(HttpMethod.DELETE,"/tareas/{id}").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT,"/tareas/{id}").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.GET,"/tareas").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.POST,"/tareas").hasRole("ADMIN")
 
