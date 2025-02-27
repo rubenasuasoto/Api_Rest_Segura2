@@ -165,10 +165,10 @@ Sino te pertenece la tarea
 
 ### **4. Prueba de actualizar estado  "ADMIN"**
 
-![Prueba de Registro](img/Tarea/dar_tarea.png)
+![Prueba de Registro](img/Tarea/actualizar_tarea.png)
 
 Sino eres admin 
 
-![Prueba de Registro](img/Tarea/dar_tarea_unathorized.png)
+![Prueba de Registro](img/Tarea/actualizar_forbi.png)
 
 
