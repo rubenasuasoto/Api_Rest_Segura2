@@ -210,17 +210,9 @@ Sino eres admin
 
 ![Prueba de Registro](img/Tarea/campos_vacio.png)
 -
-#### El email existe
-![Prueba de Registro](img/Tarea/delete_forbi.png)
+#### El usuario no existe
+![Prueba de Registro](img/Tarea/usuario_no.png)
 -
-#### El usuario existe
-![Prueba de Registro](img/Tarea/delete_forbi.png)
+#### Estado incorrecto
+![Prueba de Registro](img/Tarea/estado_incorrecto.png)
 -
-#### Contraseña no iguales
-![Prueba de Registro](img/Tarea/delete_forbi.png)
--
-#### Rol incorrecto
-![Prueba de Registro](img/Tarea/delete_forbi.png)
-### **5. Prueba de Login de Usuario "Errores"**
-#### Nombre o contraseña incorrecto
-![Prueba de Registro](img/Tarea/delete_forbi.png)
