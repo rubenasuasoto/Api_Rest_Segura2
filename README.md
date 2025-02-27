@@ -199,8 +199,28 @@ Sino te pertenece la tarea
 
 ![Prueba de Registro](img/Tarea/delete_other.png)
 
+
 Sino eres admin 
 
 ![Prueba de Registro](img/Tarea/delete_forbi.png)
 
 
+### **9. Prueba de Registro de Tareas "Errores**
+#### Campo vacio
+
+![Prueba de Registro](img/Tarea/campos_vacio.png)
+-
+#### El email existe
+![Prueba de Registro](img/Tarea/delete_forbi.png)
+-
+#### El usuario existe
+![Prueba de Registro](img/Tarea/delete_forbi.png)
+-
+#### Contraseña no iguales
+![Prueba de Registro](img/Tarea/delete_forbi.png)
+-
+#### Rol incorrecto
+![Prueba de Registro](img/Tarea/delete_forbi.png)
+### **5. Prueba de Login de Usuario "Errores"**
+#### Nombre o contraseña incorrecto
+![Prueba de Registro](img/Tarea/delete_forbi.png)
