@@ -91,36 +91,36 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 
 ### **1. Prueba de Registro de Usuario "USER"**
 
-![Prueba de Registro](img/register.png)
+![Prueba de Registro](img/registro_usuario/register.png)
 -
-![Prueba de Registro](img/mongodb_register.png)
+![Prueba de Registro](img/registro_usuario/mongodb_register.png)
 
 ### **2. Prueba de Registro de Usuario "ADMIN"**
-![Prueba de Registro](img/registro.png)
+![Prueba de Registro](img/registro_usuario/registro.png)
 -
-![Prueba de Registro](img/mongoRegistro.png)
+![Prueba de Registro](img/registro_usuario/mongoRegistro.png)
 
 ### **3. Prueba de Login de Usuario **
-![Prueba de Login](img/Login.png)
+![Prueba de Login](img/Login_tarea/Login.png)
 
 ### **4. Prueba de Registro de Usuario "Errores**
 #### Campo vacio
-![Prueba de Registro](img/campo_vacio.png)
+![Prueba de Registro](img/registro_usuario/campo_vacio.png)
 -
 #### El email existe
-![Prueba de Registro](img/email_existe.png)
+![Prueba de Registro](img/registro_usuario/email_existe.png)
 -
 #### El usuario existe
-![Prueba de Registro](img/usuario_existe.png)
+![Prueba de Registro](img/registro_usuario/usuario_existe.png)
 -
 #### Contraseña no iguales
-![Prueba de Registro](img/contraseña_no_coincide.png)
+![Prueba de Registro](img/registro_usuario/contraseña_no_coincide.png)
 -
 #### Rol incorrecto
-![Prueba de Registro](img/Rol_incorrecto.png)
+![Prueba de Registro](img/registro_usuario/Rol_incorrecto.png)
 ### **5. Prueba de Login de Usuario "Errores"**
 #### Nombre o contraseña incorrecto
-![Prueba de Registro](img/Login_incorrecto.png)
+![Prueba de Registro](img/Login_tarea/Login_incorrecto.png)
 
 
 
@@ -135,7 +135,7 @@ Pd: el video se deberia descargar si haces click o en el sitio dandole "view Raw
 
 Operaciones que aparecen en el video de la interfaz 
 
-![Prueba de Registro](img/mongodb_prueba.png)
+![Prueba de Registro](img/registro_usuario/mongodb_prueba.png)
 
 
 ## PRUEBAS GESTIÓN TAREAS
