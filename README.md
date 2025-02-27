@@ -199,8 +199,20 @@ Sino te pertenece la tarea
 
 ![Prueba de Registro](img/Tarea/delete_other.png)
 
+
 Sino eres admin 
 
 ![Prueba de Registro](img/Tarea/delete_forbi.png)
 
 
+### **9. Prueba de Registro de Tareas "Errores**
+#### Campo vacio
+
+![Prueba de Registro](img/Tarea/campos_vacio.png)
+-
+#### El usuario no existe
+![Prueba de Registro](img/Tarea/usuario_no.png)
+-
+#### Estado incorrecto
+![Prueba de Registro](img/Tarea/estado_incorrecto.png)
+-
