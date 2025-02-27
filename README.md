@@ -39,16 +39,16 @@ Representa una tarea asignada a un usuario.
 - `POST /usuarios/login`: Inicio de sesión y obtención del token JWT.
 
 ### 2. **Usuario con rol USER**
-- `GET /tareas`: Ver sus propias tareas.
-- `POST /tareas`: Crear una tarea para sí mismo.
-- `PUT /tareas/{id}`: Marcar como hecha una tarea propia.
-- `DELETE /tareas/{id}`: Eliminar una tarea propia.
+- `GET /tareas/self`: Ver sus propias tareas.
+- `POST /tareas/self`: Crear una tarea para sí mismo.
+- `PUT /tareas/self/{id}`: Marcar como hecha una tarea propia.
+- `DELETE /tareas/self/{id}`: Eliminar una tarea propia.
 
 ### 3. **Usuario con rol ADMIN**
-- `GET /tareas/admin`: Ver todas las tareas de todos los usuarios.
-- `POST /tareas/admin`: Crear una tarea para cualquier usuario.
-- `PUT /tareas/admin/{id}`: Marcar como hecha cualquier tarea.
-- `DELETE /tareas/admin/{id}`: Eliminar cualquier tarea de cualquier usuario.
+- `GET /tareas`: Ver todas las tareas de todos los usuarios.
+- `POST /tareas`: Crear una tarea para cualquier usuario.
+- `PUT /tareas/{id}`: Marcar como hecha cualquier tarea.
+- `DELETE /tareas/{id}`: Eliminar cualquier tarea de cualquier usuario.
 
 ---
 
@@ -165,10 +165,10 @@ Sino te pertenece la tarea
 
 ### **4. Prueba de actualizar estado  "ADMIN"**
 
-![Prueba de Registro](img/Tarea/dar_tarea.png)
+![Prueba de Registro](img/Tarea/actualizar_tarea.png)
 
 Sino eres admin 
 
-![Prueba de Registro](img/Tarea/dar_tarea_unathorized.png)
+![Prueba de Registro](img/Tarea/actualizar_forbi.png)
 
 
