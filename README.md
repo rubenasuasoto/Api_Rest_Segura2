@@ -150,7 +150,25 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 
 ![Prueba de Registro](img/Tarea/dar_tarea.png)
 
+Sino eres admin 
+
+![Prueba de Registro](img/Tarea/dar_tarea_unathorized.png)
+
 
 ### **3. Prueba de actualizar estado "USER"**
+
+![Prueba de Registro](img/Tarea/cambiar_estado.png)
+
+Sino te pertenece la tarea 
+
+![Prueba de Registro](img/Tarea/update_forbidden.png)
+
+### **4. Prueba de actualizar estado  "ADMIN"**
+
+![Prueba de Registro](img/Tarea/dar_tarea.png)
+
+Sino eres admin 
+
+![Prueba de Registro](img/Tarea/dar_tarea_unathorized.png)
 
 
