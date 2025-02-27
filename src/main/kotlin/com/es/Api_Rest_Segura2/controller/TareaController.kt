@@ -54,7 +54,7 @@ class TareaController {
      * Endpoint para actualizar una tarea por ID
      */
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') || @tareaService.isUserOwner(#id, authentication.name)")
+    @PreAuthorize("hasRole('ADMIN') or @tareaService.isUserOwner(#id, authentication.name)")
     fun updateEstado(
         @RequestBody tarea: Tarea,
         @PathVariable id: String
