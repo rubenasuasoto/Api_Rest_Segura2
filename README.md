@@ -205,7 +205,7 @@ Sino eres admin
 ![Prueba de Registro](img/Tarea/delete_forbi.png)
 
 
-### **9. Prueba de Registro de Tareas "Errores**
+### **9. Prueba de Tareas "Errores"**
 #### Campo vacio
 
 ![Prueba de Registro](img/Tarea/campos_vacio.png)
