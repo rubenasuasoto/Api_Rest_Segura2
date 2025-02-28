@@ -145,6 +145,9 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 ### **1. Prueba de Registro de "Tarea propia" "USER"**
 
 ![Prueba de Registro](img/Tarea/self_tarea.png)
+-
+![Prueba de Registro](img/Tarea/prueba_mongo.png)
+-
 
 ### **2. Prueba de Registro de "dar  Tarea" "ADMIN"**
 
