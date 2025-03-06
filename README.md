@@ -225,7 +225,7 @@ Sino eres admin
 
 A continuación, se presentan las pruebas realizadas en la **Interfaz** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
 
-![Prueba interfaz tarea ](img/VID_20250306_173320.mp4)
+![Prueba interfaz tarea ]([VID_20250306_173320.mp4](https://drive.google.com/file/d/1e_ExzrKQKCWoWuvEUtzGKLtm6fQW2_ap/view?usp=sharing))
 
 Pd: el video se deberia descargar si haces click o en el sitio dandole "view Raw"
 
