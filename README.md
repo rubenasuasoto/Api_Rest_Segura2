@@ -145,6 +145,9 @@ A continuación, se presentan las pruebas realizadas en **Insomnia** para compro
 ### **1. Prueba de Registro de "Tarea propia" "USER"**
 
 ![Prueba de Registro](img/Tarea/self_tarea.png)
+-
+![Prueba de Registro](img/Tarea/prueba_mongo.png)
+-
 
 ### **2. Prueba de Registro de "dar  Tarea" "ADMIN"**
 
@@ -205,7 +208,7 @@ Sino eres admin
 ![Prueba de Registro](img/Tarea/delete_forbi.png)
 
 
-### **9. Prueba de Registro de Tareas "Errores**
+### **9. Prueba de Tareas "Errores"**
 #### Campo vacio
 
 ![Prueba de Registro](img/Tarea/campos_vacio.png)
@@ -215,4 +218,7 @@ Sino eres admin
 -
 #### Estado incorrecto
 ![Prueba de Registro](img/Tarea/estado_incorrecto.png)
--
+
+
+### Api Render
+![Prueba de Registro](img/api.png)
