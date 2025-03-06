@@ -135,7 +135,7 @@ Pd: el video se deberia descargar si haces click o en el sitio dandole "view Raw
 
 Operaciones que aparecen en el video de la interfaz 
 
-![Prueba de Registro](img/registro_usuario/mongodb_prueba.png)
+![Prueba de Registro y login ](img/registro_usuario/mongodb_prueba.png)
 
 
 ## PRUEBAS GESTIÓN TAREAS
@@ -225,7 +225,7 @@ Sino eres admin
 
 A continuación, se presentan las pruebas realizadas en la **Interfaz** para comprobar el correcto funcionamiento del **registro** y **login** de usuarios.
 
-![Prueba de Registro](img/VID_20250306_173320.mp4)
+![Prueba interfaz tarea ](img/VID_20250306_173320.mp4)
 
 Pd: el video se deberia descargar si haces click o en el sitio dandole "view Raw"
 
