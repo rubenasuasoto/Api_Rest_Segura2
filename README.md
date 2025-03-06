@@ -222,10 +222,27 @@ Sino eres admin
 
 ### Api Render
 ![Prueba de Registro](img/api.png)
+-
 
 A continuación, se presentan las pruebas realizadas en la **Interfaz** para comprobar el correcto funcionamiento de las Tareas
 
 https://drive.google.com/file/d/1e_ExzrKQKCWoWuvEUtzGKLtm6fQW2_ap/view?usp=sharing
 
 Pd: el link se deberia llevarte al video 
+
+
+## **Prueba de Tareas "Interfaz"**
+#### Campo vacio
+
+![Prueba de Registro](img/tarea_interfaz/campo_vacio.png)
+-
+#### El estado no es correcto
+![Prueba de Registro](img/tarea_interfaz/estado_diferente.png)
+-
+### Menu de tareas 
+![Prueba de Registro](img/tarea_interfaz/Screenshot_20250306_232043.png)
+#### Tareas de mongodb que coincide a las Tareas del usuario"Mario"
+![Prueba de Registro](img/tarea_interfaz/mongo_query.png)
+![Prueba de Registro](img/tarea_interfaz/mongo_query2.png)
+
 
