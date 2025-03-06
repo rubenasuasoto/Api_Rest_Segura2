@@ -218,4 +218,7 @@ Sino eres admin
 -
 #### Estado incorrecto
 ![Prueba de Registro](img/Tarea/estado_incorrecto.png)
--
+
+
+### Api Render
+![Prueba de Registro](img/api.png)
